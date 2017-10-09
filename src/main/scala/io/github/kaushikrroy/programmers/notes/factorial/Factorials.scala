@@ -29,7 +29,7 @@ package io.github.kaushikrroy.programmers.notes.factorial
 object Factorials {
   object Linear {
     /**
-     * Finds the factorial of the given number using simple reduce.
+     * Finds the factorial of the given number using simple fold left.
      *
      * @param n
      *            the given number.
@@ -40,8 +40,11 @@ object Factorials {
 
   object Recursive {
     /**
+     * Finds the factorial of the given number using recursion.
+     *
      * @param n
-     * @return
+     *            the given number.
+     * @return the factorial.
      */
     def factorial(n: Int): Int = if (0 == n) 1 else n * factorial(n - 1)
   }
