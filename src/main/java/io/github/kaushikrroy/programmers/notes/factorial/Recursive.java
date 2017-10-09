@@ -37,7 +37,7 @@ public class Recursive {
 	 *            the given number.
 	 * @return the factorial.
 	 */
-	public int factorial(int n) {
+	public int factorial(final int n) {
 		if (0 == n) {
 			return 1;
 		} else {
