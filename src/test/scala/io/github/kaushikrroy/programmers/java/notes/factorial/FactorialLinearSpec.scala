@@ -1,9 +1,4 @@
-package io.github.kaushikrroy.programmers.notes.factorial
-
-import org.scalatest.FlatSpec
-import org.scalatest.Matchers
-
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2017 Kaushik Roy
@@ -25,30 +20,34 @@ import org.scalatest.Matchers
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
- * @author kaushikrroy@gmail.com
- *
  */
-class FactorialSpecL extends FlatSpec with Matchers {
-  import io.github.kaushikrroy.programmers.notes.factorial.Factorials.Linear._
-  
-  "Factorial of 0 by linear" should " yeild 1" in {
-    factorial(0) should be(1)
+package io.github.kaushikrroy.programmers.java.notes.factorial
+
+import org.scalatest.FlatSpec
+import org.scalatest.Matchers
+import org.scalactic.source.Position.apply
+
+/**
+ * @author kaushikrroy@gmail.com
+ */
+class FactorialLinearSpec extends FlatSpec with Matchers {
+  "Factorial of 0 by linear" should " yield 1" in {
+    new FactorialIterative().factorial(0) should be(1)
   }
 
-  "Factorial of 1 by linear" should " yeild 1" in {
-    factorial(1) should be(1)
+  "Factorial of 1 by linear" should " yield 1" in {
+    new FactorialIterative().factorial(1) should be(1)
   }
 
-  "Factorial of 2 by linear" should " yeild 2" in {
-    factorial(2) should be(2)
+  "Factorial of 2 by linear" should " yield 2" in {
+    new FactorialIterative().factorial(2) should be(2)
   }
 
-  "Factorial of 3 by linear" should " yeild 6" in {
-    factorial(3) should be(6)
+  "Factorial of 3 by linear" should " yield 6" in {
+    new FactorialIterative().factorial(3) should be(6)
   }
 
-  "Factorial of 5 by linear" should " yeild 120" in {
-    factorial(5) should be(120)
+  "Factorial of 5 by linear" should " yield 120" in {
+    new FactorialIterative().factorial(5) should be(120)
   }
 }

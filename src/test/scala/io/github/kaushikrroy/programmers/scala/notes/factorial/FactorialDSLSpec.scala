@@ -1,4 +1,4 @@
-package io.github.kaushikrroy.programmers.notes.factorial
+package io.github.kaushikrroy.programmers.scala.notes.factorial
 
 import org.scalatest.FlatSpec
 import org.scalatest.Matchers
@@ -29,24 +29,26 @@ import org.scalatest.Matchers
  * @author kaushikrroy@gmail.com
  *
  */
-class FactorialSpecJavaL extends FlatSpec with Matchers {
-  "Factorial of 0 by linear" should " yeild 1" in {
-    new Linear().factorial(0) should be(1)
+class FactorialDSLSpec extends FlatSpec with Matchers {
+  import io.github.kaushikrroy.programmers.scala.notes.factorial.Factorials._;
+
+  "Factorial of 0 by with 0!" should " yield 1" in {
+    (0!) should be(1)
   }
 
-  "Factorial of 1 by linear" should " yeild 1" in {
-    new Linear().factorial(1) should be(1)
+  "Factorial of 1 by with 1!" should " yield 1" in {
+    (1!) should be(1)
   }
 
-  "Factorial of 2 by linear" should " yeild 2" in {
-    new Linear().factorial(2) should be(2)
+  "Factorial of 2 by with 2!" should " yield 2" in {
+    (2!) should be(2)
   }
 
-  "Factorial of 3 by linear" should " yeild 6" in {
-    new Linear().factorial(3) should be(6)
+  "Factorial of 3 by with 3!" should " yield 6" in {
+    (3!) should be(6)
   }
 
-  "Factorial of 5 by linear" should " yeild 120" in {
-    new Linear().factorial(5) should be(120)
+  "Factorial of 5 by with 5!" should " yield 120" in {
+    (5!) should be(120)
   }
 }

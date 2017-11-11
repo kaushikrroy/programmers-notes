@@ -1,20 +1,18 @@
-package io.github.kaushikrroy.programmers.notes.factorial
-
-/**
+/*
  * MIT License
- *
+ * 
  * Copyright (c) 2017 Kaushik Roy
- *
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,13 +20,14 @@ package io.github.kaushikrroy.programmers.notes.factorial
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
- * @author kaushikrroy@gmail.com
- *
  */
-object Factorials {
-  object Linear {
-    /**
+package io.github.kaushikrroy.programmers.scala.notes.factorial
+
+/**
+ * @author kaushik.roy
+ */
+object Iterative {
+  /**
      * Finds the factorial of the given number using simple fold left.
      *
      * @param n
@@ -36,16 +35,4 @@ object Factorials {
      * @return the factorial.
      */
     def factorial(n: Int) = (1 to n foldLeft 1)(_ * _)
-  }
-
-  object Recursive {
-    /**
-     * Finds the factorial of the given number using recursion.
-     *
-     * @param n
-     *            the given number.
-     * @return the factorial.
-     */
-    def factorial(n: Int): Int = if (0 == n) 1 else n * factorial(n - 1)
-  }
 }

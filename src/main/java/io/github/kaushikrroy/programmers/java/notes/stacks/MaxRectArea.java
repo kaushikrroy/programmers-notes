@@ -1,9 +1,4 @@
-/**
- * 
- */
-package io.github.kaushikrroy.programmers.notes.factorial;
-
-/**
+/*
  * MIT License
  * 
  * Copyright (c) 2017 Kaushik Roy
@@ -25,23 +20,8 @@ package io.github.kaushikrroy.programmers.notes.factorial;
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
- * @author kaushikrroy@gmail.com
- *
  */
-public class Recursive {
-	/**
-	 * Finds the factorial of the given number using recursion.
-	 * 
-	 * @param n
-	 *            the given number.
-	 * @return the factorial.
-	 */
-	public int factorial(final int n) {
-		if (0 == n) {
-			return 1;
-		} else {
-			return n * factorial(n - 1); // n * f(n -1)
-		}
-	}
+package io.github.kaushikrroy.programmers.java.notes.stacks;
+
+public class MaxRectArea {
 }

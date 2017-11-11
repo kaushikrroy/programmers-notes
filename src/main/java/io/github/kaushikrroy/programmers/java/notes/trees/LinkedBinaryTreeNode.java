@@ -1,23 +1,18 @@
-/**
- * 
- */
-package io.github.kaushikrroy.programmers.notes.factorial;
-
-/**
+/*
  * MIT License
- * 
+ *
  * Copyright (c) 2017 Kaushik Roy
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,25 +20,58 @@ package io.github.kaushikrroy.programmers.notes.factorial;
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
- * @author kaushikrroy@gmail.com
- *
  */
-public class Linear {
-	/**
-	 * Finds the factorial of the given number using a simple for loop.
-	 * 
-	 * @param n
-	 *            the given number.
-	 * @return the factorial.
-	 */
-	public int factorial(int n) {
-		int result = 1;
+package io.github.kaushikrroy.programmers.java.notes.trees;
 
-		for (int i = 2; i <= n; i++) {
-			result *= i;
-		}
+/**
+ * @param <T>
+ */
+public class LinkedBinaryTreeNode<T> implements BinaryTreeNode<T> {
+    private final T data;
+    private BinaryTreeNode<T> left;
+    private BinaryTreeNode<T> right;
 
-		return result;
-	}
+    public LinkedBinaryTreeNode(T data) {
+        this.data = data;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public T value() {
+        return data;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public BinaryTreeNode<T> left() {
+        return left;
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public BinaryTreeNode<T> right() {
+        return right;
+    }
+
+    /**
+     * @param left
+     */
+    @Override
+    public void setLeft(BinaryTreeNode<T> left) {
+        this.left = left;
+    }
+
+    /**
+     * @param right
+     */
+    @Override
+    public void setRight(BinaryTreeNode<T> right) {
+        this.right = right;
+    }
 }

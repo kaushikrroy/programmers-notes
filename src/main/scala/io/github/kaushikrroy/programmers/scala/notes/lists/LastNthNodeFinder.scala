@@ -1,9 +1,4 @@
-package io.github.kaushikrroy.programmers.notes.factorial
-
-import org.scalatest.FlatSpec
-import org.scalatest.Matchers
-
-/**
+/*
  * MIT License
  *
  * Copyright (c) 2017 Kaushik Roy
@@ -25,28 +20,51 @@ import org.scalatest.Matchers
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- *
- * @author kaushikrroy@gmail.com
+ * 
+ */
+package io.github.kaushikrroy.programmers.scala.notes.lists
+
+/**
+ * @author kaushik.roy
  *
  */
-class FactorialSpecJavaR extends FlatSpec with Matchers {
-  "Factorial of 0 by recursive" should " yeild 1" in {
-    new Recursive().factorial(0) should be(1)
+object LastNthNodeFinder {
+  /**
+   * @param head
+   * @param n
+   * @return
+   */
+  def findNthFromLast[T](head: Node[T], n: Int): Node[T] = {
+    var runner = head; var result = head; var i = 0
+
+    while (null != head && i < n) {
+      runner = runner.next
+      i = i + 1;
+    }
+
+    if (null != runner) {
+      while (null != runner) {
+        runner = runner.next
+        result = result.next
+      }
+    }
+
+    result;
   }
 
-  "Factorial of 1 by recursive" should " yeild 1" in {
-    new Recursive().factorial(1) should be(1)
-  }
-
-  "Factorial of 2 by recursive" should " yeild 2" in {
-    new Recursive().factorial(2) should be(2)
-  }
-
-  "Factorial of 3 by recursive" should " yeild 6" in {
-    new Recursive().factorial(3) should be(6)
-  }
-
-  "Factorial of 5 by recursive" should " yeild 120" in {
-    new Recursive().factorial(5) should be(120)
+  def main(args: Array[String]): Unit = {
+    val x1 = new ListNode[Integer](1);
+    val x2 = new ListNode[Integer](2);
+    val x3 = new ListNode[Integer](3);
+    val x4 = new ListNode[Integer](4);
+    val x5 = new ListNode[Integer](5);
+    
+    x1 -> x2 -> x3 -> x4 -> x5
+    
+    println(x1)
+    
+    val result = LastNthNodeFinder.findNthFromLast(x1, 2)
+    
+    println(result)
   }
 }
