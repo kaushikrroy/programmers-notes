@@ -28,7 +28,7 @@ package io.github.kaushikrroy.programmers.scala.notes.factorial
  */
 object Iterative {
   /**
-     * Finds the factorial of the given number using simple fold left.
+     * Finds the factorial of the given number using simple fold leftChild.
      *
      * @param n
      *            the given number.
