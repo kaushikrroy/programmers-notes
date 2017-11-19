@@ -1,9 +1,5 @@
 package io.github.kaushikrroy.programmers.java.notes.heaps;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.PriorityQueue;
-
 public class ArrayBinaryHeap<T extends Comparable<T>> implements BinaryHeap<T> {
     private Object[] data;
     private int count;
@@ -70,7 +66,7 @@ public class ArrayBinaryHeap<T extends Comparable<T>> implements BinaryHeap<T> {
     public T leftChild(int i) {
         int leftLocation = 2 * i + 1;
 
-        if(this.count <= leftLocation) {
+        if (this.count <= leftLocation) {
             return null;
         }
 
@@ -79,7 +75,12 @@ public class ArrayBinaryHeap<T extends Comparable<T>> implements BinaryHeap<T> {
 
     @Override
     public T rightChild(int i) {
+        int rightLocation = 2 * i + 2;
 
-        return null;
+        if (this.count <= rightLocation) {
+            return null;
+        }
+
+        return (T) data[rightLocation];
     }
 }
