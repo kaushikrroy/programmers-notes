@@ -25,11 +25,6 @@ public class ArrayBinaryHeap<T extends Comparable<T>> implements BinaryHeap<T> {
     }
 
     @Override
-    public T poll() {
-        return null;
-    }
-
-    @Override
     public T remove() {
         return null;
     }
@@ -84,3 +79,4 @@ public class ArrayBinaryHeap<T extends Comparable<T>> implements BinaryHeap<T> {
         return (T) data[rightLocation];
     }
 }
+

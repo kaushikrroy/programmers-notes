@@ -21,40 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package io.github.kaushikrroy.programmers.java.notes.lists;
+package io.github.kaushikrroy.programmers.java.notes.lists
+
+import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * @author kaushikrroy@gmail.com
  */
-public class CircularList {
-    public <T> Node<T> toCircular(final Node<T> head) {
-        Node<T> next = head;
-        Node<T> previous = null;
+class FloydCycleSpec extends FlatSpec with Matchers {
 
-        while(null != next) {
-            previous = next;
-            next = next.next();
-        }
+  "This should make the algorithm detect a cycle and it" should "yield true" in {
+    val x1 = new ListNode[Int](1)
+    val x2 = new ListNode[Int](2)
+    val x3 = new ListNode[Int](3)
+    val x4 = new ListNode[Int](4)
+    val x5 = new ListNode[Int](5)
 
-        previous.setNext(head);
-        return head;
-    }
+    x1 setNext x2 setNext x3 setNext x4 setNext x5 setNext x1
 
-    public static void main(String[] args) {
-        Node<Integer> x1 = new ListNode<Integer>(1);
-        Node<Integer> x2 = new ListNode<Integer>(2);
-        Node<Integer> x3 = new ListNode<Integer>(3);
-        Node<Integer> x4 = new ListNode<Integer>(4);
-        Node<Integer> x5 = new ListNode<Integer>(5);
-
-        x1.setNext(x2).setNext(x3).setNext(x4).setNext(x5);
-
-        System.out.println(x1.toChain());
-
-        CircularList make = new CircularList();
-        make.toCircular(x1);
-
-        FloydCycle cycle = new FloydCycle();
-        System.out.println(cycle.findCycle(x1));
-    }
+    val cycleDetector = new FloydCycle
+    cycleDetector findCycle x1 shouldBe(true)
+  }
 }

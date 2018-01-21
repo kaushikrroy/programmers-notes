@@ -3,8 +3,6 @@ package io.github.kaushikrroy.programmers.java.notes.heaps;
 public interface BinaryHeap<T extends Comparable<T>> {
     T offer(T data);
 
-    T poll();
-
     T remove();
 
     int size();
