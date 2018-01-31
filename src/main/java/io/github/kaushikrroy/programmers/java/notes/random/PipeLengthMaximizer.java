@@ -23,12 +23,20 @@
  */
 package io.github.kaushikrroy.programmers.java.notes.random;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * <p>Given number of pipes 1..n, Find two largest pipes of maximum length possible.
+ * <br>Ex: input - 1,2,3,4,6
+ * <br>Output - The maximum length possible is 8.
+ * <br>Pipe1 - 2,6
+ * <br>Pipe2 - 1,3,4</p>
+ */
 public class PipeLengthMaximizer {
-    static void subsets(int[] pipes) {
+    private int maxLenghtPipes = Integer.MIN_VALUE;
+
+    public PipeLengthMaximizer optimize(int[] pipes) {
         int subsets = 1 << pipes.length;
 
         for (int i = 0; i < subsets; i++) {
@@ -43,13 +51,20 @@ public class PipeLengthMaximizer {
                 }
             }
 
-            System.out.println(Arrays.toString(list.toArray(new Integer[list.size()])));
-            System.out.println("s1=" + firstHalf + ", s2=" + secondHalf);
-            System.out.println();
+            if (firstHalf == secondHalf) {
+                this.maxLenghtPipes = Math.max(firstHalf, secondHalf);
+            }
         }
+
+        return this;
+    }
+
+
+    public int getMaxPossibleLength() {
+        return this.maxLenghtPipes;
     }
 
     public static void main(String[] args) {
-        subsets(new int[]{1, 2, 3, 4, 6});
+        System.out.println(new PipeLengthMaximizer().optimize(new int[]{1, 2, 3, 4, 6}).getMaxPossibleLength());
     }
 }
