@@ -107,11 +107,11 @@ public class TravelOptimizer2 {
     }
 
     public long shortestDistance() {
-        for(int i = 0; i < this.distance.length; i++) {
+        for(int i = 0; i < this.vertices.length; i++) {
             int mVertex = minimum();
             this.visited[mVertex] = true;
 
-            for(int vertex = 0; vertex < this.distance.length; vertex++) {
+            for(int vertex = 0; vertex < this.vertices.length; vertex++) {
                 if(!this.visited[vertex]
                     && 0 != this.graph[mVertex][vertex]
                     && Long.MAX_VALUE != this.distance[mVertex]
@@ -129,6 +129,16 @@ public class TravelOptimizer2 {
     }
 
     public static void main(String[] args) {
+        // 0 0 100 100 70 40 30 10 10 5 90 70 50 20
+        final Vertex[] vertices = new Vertex[7];
+        vertices[0] = new Vertex(0, 0);
+        vertices[1] = new Vertex(70, 40);
+        vertices[2] = new Vertex(30, 10);
+        vertices[3] = new Vertex(10, 5);
+        vertices[4] = new Vertex(90, 70);
+        vertices[5] = new Vertex(50, 20);
+        vertices[6] = new Vertex(100, 100);
 
+        new TravelOptimizer2(vertices).shortestDistance();
     }
 }

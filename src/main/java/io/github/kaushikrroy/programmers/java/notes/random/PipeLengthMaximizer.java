@@ -50,7 +50,7 @@ public class PipeLengthMaximizer {
             }
 
             if (firstHalf == secondHalf) {
-                this.maxLenghtPipes = Math.max(firstHalf, secondHalf);
+                this.maxLenghtPipes = Math.max(firstHalf, this.maxLenghtPipes);
             }
         }
 

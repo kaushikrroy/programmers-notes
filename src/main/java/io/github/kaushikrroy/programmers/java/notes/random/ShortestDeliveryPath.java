@@ -97,7 +97,7 @@ public class ShortestDeliveryPath {
             int mVertex = minimum();
             this.visited[mVertex] = true;
 
-            for (int vertex = 0; vertex < this.distance.length; vertex++) {
+            for (int vertex = 0; vertex < this.vertices.length; vertex++) {
                 if (!this.visited[vertex] // Not visited.
                         && 0 != this.graph[mVertex][vertex] //Not the same vertex.
                         && Long.MAX_VALUE != this.distance[mVertex] // Not the max one.
