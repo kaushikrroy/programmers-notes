@@ -25,4 +25,106 @@ package io.github.kaushikrroy.programmers.java.notes.random;
  * <br>For above input, the output is 200</p>
  */
 public class ShortestDeliveryPath {
+    // Representation of Vertex.
+    private static class Vertex {
+        final long x, y;
+        int index;
+
+        private Vertex(long x, long y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        private long distance(final Vertex other) {
+            long dx = this.x - other.x;
+            long dy = this.y - other.y;
+
+            long absx = (0 < dx) ? dx : -dx;
+            long absy = (0 < dy) ? dy : -dy;
+
+            return absx + absy;
+        }
+    }
+
+    private long[][] graph;
+    private Vertex[] vertices;
+    private boolean[] visited;
+    private long[] distance;
+
+    public ShortestDeliveryPath(final Vertex[] vertices) {
+        this.graph = new long[vertices.length][vertices.length];
+        this.vertices = vertices;
+        this.visited = new boolean[this.vertices.length];
+        this.distance = new long[this.vertices.length];
+
+        for (int i = 0; i < this.vertices.length; i++) {
+            this.vertices[i].index = i;
+            this.visited[i] = false;
+            this.distance[i] = Long.MAX_VALUE;
+        }
+
+        this.distance[0] = 0; // Distance from source to itself is 0.
+
+        for (int i = 0; i < vertices.length; i++) {
+            for (int j = 0; j < vertices.length; j++) {
+                if (i == j) {
+                    this.graph[i][j] = 0;
+                } else {
+                    long distance = vertices[i].distance(vertices[j]);
+                    this.graph[i][j] = distance;
+                    this.graph[j][j] = distance;
+                }
+            }
+        }
+    }
+
+    public int minimum() {
+        long minimum = Long.MAX_VALUE;
+        int vertex = -1;
+
+        for (int i = 0; i < this.vertices.length; i++) {
+            if (!this.visited[i] && this.distance[i] <= minimum) {
+                minimum = this.distance[i];
+                vertex = i;
+            }
+        }
+
+        return vertex;
+    }
+
+    public long shortestDistance() {
+        for (int i = 0; i < this.vertices.length; i++) {
+            int mVertex = minimum();
+            this.visited[mVertex] = true;
+
+            for (int vertex = 0; vertex < this.distance.length; vertex++) {
+                if (!this.visited[vertex] // Not visited.
+                        && 0 != this.graph[mVertex][vertex] //Not the same vertex.
+                        && Long.MAX_VALUE != this.distance[mVertex] // Not the max one.
+                        && this.distance[mVertex] + this.graph[mVertex][vertex] <= this.distance[vertex]) { // Absolute greedy.
+                    this.distance[vertex] = this.distance[mVertex] + this.graph[mVertex][vertex];
+                }
+            }
+        }
+
+
+        for (int i = 0; i < distance.length; i++) {
+            System.out.println("0--->" + i + "=" + distance[i]);
+        }
+
+        return this.distance[this.vertices.length - 1];
+    }
+
+    public static void main(String[] args){
+      // 0 0 100 100 20 30 50 50 70 70
+        final Vertex[] vertices = new Vertex[5];
+        vertices[0] = new Vertex(0, 0);
+        vertices[1] = new Vertex(20, 30);
+        vertices[2] = new Vertex(50, 50);
+        vertices[3] = new Vertex(70, 70);
+        vertices[4] = new Vertex(100, 100);
+
+        System.out.println(new ShortestDeliveryPath(vertices).shortestDistance());
+    }
+
 }

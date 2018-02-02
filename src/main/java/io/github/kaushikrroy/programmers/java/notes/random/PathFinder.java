@@ -55,7 +55,7 @@ public class PathFinder {
                 Integer n = Integer.MAX_VALUE, w = Integer.MAX_VALUE, nw = Integer.MAX_VALUE;
                 Integer ne = Integer.MAX_VALUE, sw = Integer.MAX_VALUE;
 
-                if (row + 1 < grid.length && !visited[row][column] && !hasPathBeenVisited(row, column, row + 1, column)) {
+                if (row + 1 < grid.length && !hasPathBeenVisited(row, column, row + 1, column)) {
                     markVisited(row, column, row + 1, column); // Dynamic Programming, mark all paths visited.
                     s = findPath(row + 1, column);
                 }
