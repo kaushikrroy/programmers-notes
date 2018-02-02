@@ -56,11 +56,11 @@ import java.util.List;
  * [I/O Example]<br>
  * Input (20 lines in total. In the first test case, the locations of the office and the home are (0, 0) and (100, 100)
  * respectively, and the locations of the customers are (70, 40), (30, 10), (10, 5), (90, 70), (50, 20).)<br>
- * 5 ← Starting test case #1 <br>
+ * 5 : Starting test case #1 <br>
  * 0 0 100 100 70 40 30 10 10 5 90 70 50 20 <br>
- * 6 ← Starting test case #2<br>
+ * 6 : Starting test case #2<br>
  * 88 81 85 80 19 22 31 15 27 29 30 10 20 26 5 14<br>
- * 10 ← Starting test case #3<br>
+ * 10 : Starting test case #3<br>
  * 39 9 97 61 35 93 62 64 96 39 36 36 9 59 59 96 61 7 64 43 43 58 1 36<br>
  * ...<br>
  * Output (10 lines in total)<br>

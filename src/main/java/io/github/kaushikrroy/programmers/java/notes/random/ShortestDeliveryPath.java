@@ -28,7 +28,7 @@ public class ShortestDeliveryPath {
     // Representation of Vertex.
     private static class Vertex {
         final long x, y;
-        int index;
+        // int index;
 
         private Vertex(long x, long y) {
             this.x = x;
@@ -58,7 +58,7 @@ public class ShortestDeliveryPath {
         this.distance = new long[this.vertices.length];
 
         for (int i = 0; i < this.vertices.length; i++) {
-            this.vertices[i].index = i;
+            // this.vertices[i].index = i;
             this.visited[i] = false;
             this.distance[i] = Long.MAX_VALUE;
         }
