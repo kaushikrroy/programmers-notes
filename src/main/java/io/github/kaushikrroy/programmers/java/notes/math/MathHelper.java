@@ -63,6 +63,15 @@ public class MathHelper {
         }
     }
 
+
+    static <T> void cominations(final T[] data, final int r, final T[] combination, final int index) {
+        if(r == index) {
+            System.out.println(Arrays.toString(combination));
+        } else {
+
+        }
+    }
+
     public static void main(String[] args) {
         permute(new Integer[]{1, 2, 3, 4}, 0, new ArrayVisitor<Integer>() {
             @Override

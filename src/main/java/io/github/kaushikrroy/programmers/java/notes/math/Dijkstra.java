@@ -46,7 +46,7 @@ public class Dijkstra {
                         && this.graph[mVertex][vertex] != 0 // Path is non zero.
                         && Long.MAX_VALUE != this.distance[mVertex] // If is not max.
                         && this.distance[mVertex] + this.graph[mVertex][vertex] < distance[vertex]) { // Greedy if distance is less.
-                    this.distace[vertex] = this.distance[mVertex] + this.graph[mVertex][vertex];
+                    this.distance[vertex] = this.distance[mVertex] + this.graph[mVertex][vertex];
                 }
             }
         }
