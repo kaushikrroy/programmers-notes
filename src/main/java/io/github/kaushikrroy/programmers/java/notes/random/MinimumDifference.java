@@ -7,5 +7,7 @@ public class MinimumDifference {
     public int minimumDifference(final int[] input) {
         
         Arrays.sort(input);
+
+        return 0;
     }
 }
